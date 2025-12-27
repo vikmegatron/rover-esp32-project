@@ -1,0 +1,11 @@
+﻿# 🔌 Conexiones
+
+ESP32 → L298N-1:
+- GPIO12 → ENA
+- GPIO13 → IN1  
+- GPIO14 → IN2
+
+ESP32 → L298N-2:
+- GPIO15 → ENA
+- GPIO2  → IN1
+- GPIO4  → IN2
