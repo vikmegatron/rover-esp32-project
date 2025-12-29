@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Rover ESP32</title>
+    <!-- Conectamos nuestro futuro archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de FontAwesome (gratis) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body bgcolor="gray">
+    <div class="container">
+        <!-- CABECERA -->
+        <!-- CABECERA CON CONEXIÓN -->
+        <header>
+            <h1><i class="fas fa-robot"></i> Control Rover ESP32</h1>
+            <p class="subtitle">Control WiFi con interfaz web + L298N</p>
+    
+            <div class="connection">
+              <div class="status" id="status">⏳ Desconectado</div>
+              <input type="text" id="ipInput" placeholder="IP del ESP32 (ej: 192.168.1.100)">
+               <button onclick="connect()">Conectar</button>
+            </div>
+        </header>
+
+        <!-- PANEL DE CONTROL -->
+        <div class="control-panel">
+            <h2>Control Direccional</h2>
+
+            <div class="control-panel">
+                <h2><i class="fas fa-gamepad"></i> Control Direccional</h2>
+                
+                <div class="joystick-area">
+                    <!-- Fila 1: Boton ARRIBA -->
+                    <button class="dir-btn up" onclick="sendCommand('F')">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                    <br> <!-- Salto de linea -->
+                    
+                    <!-- Fila 2: IZQUIERDA - STOP - DERECHA -->
+                    <button class="dir-btn left" onclick="sendCommand('L')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    
+                    <button class="dir-btn stop" onclick="sendCommand('S')">
+                        <i class="fas fa-stop"></i>
+                    </button>
+                    
+                    <button class="dir-btn right" onclick="sendCommand('R')">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <br>
+                    
+                    <!-- Fila 3: Boton ABAJO -->
+                    <button class="dir-btn down" onclick="sendCommand('B')">
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+                
+                <p class="hint">Usa las teclas WASD o flechas del teclado</p>
+            </div>
+            
+        </div>
+
+        <!-- PIE DE PAGINA -->
+        <footer>
+            <p>Proyecto Rover ESP32 | GitHub: 18ranch</p>
+        </footer>
+    </div>
+
+    <!-- Conectamos nuestro futuro JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+
+</html>
